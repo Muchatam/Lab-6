@@ -32,8 +32,19 @@ def encode(password):
 
 
 def decode(encoded_password):
-    pass
-
+    tempValue = list(encoded_password)
+    newList = []
+    for j in tempValue:
+        j = int(j)
+        j -= 3
+        if j == -2:
+            j = 8
+        if j == -1:
+            j = 9
+        newList.append(j)
+    newList = [str(k) for k in newList]
+    finalVal = ''.join(newList)
+    return finalVal
 
 if __name__ == '__main__':
     main()
